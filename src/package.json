@@ -2,25 +2,29 @@
     "name": "rbcyber-org",
     "version": "1.0.0",
     "description": "Frontend and backend for [rbcyber.org](https://rbcyber.org/)",
-    "main": "server.js",
+    "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon server.js"
+        "start": "node index.js",
+        "dev": "nodemon index.js"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/rbcyber1/rbcyber-org.git"
     },
     "keywords": [],
-    "author": "",
+    "author": "rbcyber1",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/rbcyber1/rbcyber-org/issues"
     },
     "homepage": "https://github.com/rbcyber1/rbcyber-org#readme",
     "dependencies": {
-        "express": "^5.2.1",
-        "nodemon": "^3.1.11"
+        "dotenv": "^17.2.3",
+        "express": "^5.2.1"
     },
-    "type": "module"
+    "type": "module",
+    "devDependencies": {
+        "nodemon": "^3.1.11"
+    }
 }
