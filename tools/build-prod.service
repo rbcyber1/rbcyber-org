@@ -1,0 +1,14 @@
+[Unit]
+Description=Build frontend and execute backend server
+After=network.target
+
+[Service]
+ExecStartPre=-/dir/to/script/here/build-prod.sh
+ExecStart=/usr/bin/npm start
+WorkingDirectory=/dir/to/backend/directory/here
+Restart=always
+User=usernameHere
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
