@@ -12,4 +12,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: whoami
+          script: sudo systemctl restart rbcyber-org.service && wall rbcyber.org has been updated.
