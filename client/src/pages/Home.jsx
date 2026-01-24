@@ -1,4 +1,4 @@
-import reactLogo from "../assets/react.svg";
+import reactLogo from "/react.svg";
 import viteLogo from "/vite.svg";
 import "../styles/Home.css";
 
@@ -8,7 +8,7 @@ function getYear() {
 
 export default function Home() {
     return (
-        <>
+        <div className="home-container">
             <div>
                 <a href="https://vite.dev" target="_blank">
                     <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -34,17 +34,10 @@ export default function Home() {
             </div>
             <div className="footer">
                 <p>
-                    See the routing test page <a href="/about">here</a>.
-                </p>
-                <p>
-                    See the database health check page{" "}
-                    <a href="/health">here</a>.
-                </p>
-                <p>
                     Copyright &copy; {getYear()} rbcyber.org. Permitted use for
                     non-commercial purposes only.
                 </p>
             </div>
-        </>
+        </div>
     );
 }
