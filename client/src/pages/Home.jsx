@@ -2,6 +2,10 @@ import reactLogo from "../assets/react.svg";
 import viteLogo from "/vite.svg";
 import "../styles/Home.css";
 
+function getYear() {
+    return new Date().getFullYear();
+}
+
 export default function Home() {
     return (
         <>
@@ -22,7 +26,7 @@ export default function Home() {
                 <p>
                     <a href="https://rbcyber.org/">rbcyber.org</a> is currently
                     undergoing maintenance. Check the{" "}
-                    <a href="https://github.com/rbcyber1/rbcyber-org-">
+                    <a href="https://github.com/rbcyber1/rbcyber-org">
                         GitHub repo
                     </a>{" "}
                     for updates.
@@ -31,6 +35,10 @@ export default function Home() {
             <div className="footer">
                 <p>
                     See the routing test page <a href="/about">here</a>.
+                </p>
+                <p>
+                    Copyright &copy; {getYear()} rbcyber.org. Permitted use for
+                    non-commercial purposes only.
                 </p>
             </div>
         </>
