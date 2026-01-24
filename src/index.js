@@ -9,11 +9,11 @@ import logger from "./middleware/logger.js";
 
 import healthRouter from "./routes/health.js";
 
-dotenv.config({ path: "./config/.env" });
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distPath = path.join(__dirname, "../client/dist");
+
+dotenv.config({ path: path.join(__dirname, "./config/.env") });
 
 const app = express();
 

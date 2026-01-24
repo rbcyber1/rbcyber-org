@@ -37,6 +37,10 @@ export default function Home() {
                     See the routing test page <a href="/about">here</a>.
                 </p>
                 <p>
+                    See the database health check page{" "}
+                    <a href="/health">here</a>.
+                </p>
+                <p>
                     Copyright &copy; {getYear()} rbcyber.org. Permitted use for
                     non-commercial purposes only.
                 </p>
