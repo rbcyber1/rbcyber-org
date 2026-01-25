@@ -2,16 +2,14 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/Header.css";
-import { getLoggedInUser, isAuthenticated, logout } from "../utils/login";
+import { isAuthenticated, logout } from "../utils/login";
 
 export default function Header() {
     const navigate = useNavigate();
-    const [username, setUsername] = useState(getLoggedInUser());
     const [isLoggedIn, setIsLoggedIn] = useState(isAuthenticated());
 
     useEffect(() => {
         const handleAuthChange = () => {
-            setUsername(getLoggedInUser());
             setIsLoggedIn(isAuthenticated());
         };
 
