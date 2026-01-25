@@ -1,19 +1,19 @@
-// client/src/App.jsx
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
+import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-
-import Home from "./pages/Home";
-import Health from "./pages/Health";
-import NotFound from "./pages/NotFound";
+import { pages, NotFoundPage } from "./utils/pages";
 
 export default function App() {
     return (
         <Routes>
             <Route element={<Layout />}>
-                <Route path="/" element={<Home />} />
-                <Route path="/health" element={<Health />} />
-                <Route path="*" element={<NotFound />} />
+                {pages.map((page) => (
+                    <Route
+                        key={page.path}
+                        path={page.path}
+                        element={<page.component />}
+                    />
+                ))}
+                <Route path="*" element={<NotFoundPage />} />
             </Route>
         </Routes>
     );

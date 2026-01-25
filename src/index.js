@@ -7,8 +7,6 @@ import dotenv from "dotenv";
 
 import logger from "./middleware/logger.js";
 
-import healthRouter from "./routes/health.js";
-
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const distPath = path.join(__dirname, "../client/dist");
@@ -16,12 +14,9 @@ const distPath = path.join(__dirname, "../client/dist");
 dotenv.config({ path: path.join(__dirname, "./config/.env") });
 
 const app = express();
-
 const PORT = process.env.RBCYBER_PORT || 3000; // Configure with dotenv, default to 3000
 
 app.use(logger);
-app.use("/api/health", healthRouter);
-
 app.use(express.static(distPath));
 
 app.get(/(.*)/, (_, res) => {

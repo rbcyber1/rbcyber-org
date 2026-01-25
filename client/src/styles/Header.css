@@ -1,0 +1,33 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    right: 0;
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #333;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.87);
+    background: linear-gradient(135deg, #646cff 0%, #535bf2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    header {
+        left: 0;
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+}
