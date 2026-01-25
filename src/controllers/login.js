@@ -9,21 +9,18 @@ export const loginUser = async (req, res) => {
     try {
         const { username, password } = req.body;
 
-        // Validate input
         if (!username || !password) {
             return res
                 .status(400)
                 .json({ error: "Username and password are required" });
         }
 
-        // Get user from database
         const user = await findUserInfo(username);
 
         if (!user) {
             return res.status(401).json({ error: "Invalid credentials" });
         }
 
-        // Compare password with stored hash
         const isValid = await comparePassToSaltedHash(
             password,
             user.password_salt,
@@ -34,14 +31,12 @@ export const loginUser = async (req, res) => {
             return res.status(401).json({ error: "Invalid credentials" });
         }
 
-        // Generate JWT token
         const token = jwt.sign(
             { id: user.id, username: user.username, isAdmin: user.is_admin },
             JWT_SECRET,
             { expiresIn: JWT_EXPIRATION },
         );
 
-        // Send response with token
         res.json({
             success: true,
             token,

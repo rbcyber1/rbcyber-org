@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TextPopUp from "../elements/TextPopUp";
 import Modal from "../elements/Modal";
 
 import "../styles/Login.css";
