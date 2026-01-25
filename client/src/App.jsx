@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import { finalPages, NotFoundPage } from "./utils/pages";
+import { finalPages, NotFoundPage, LoginPage } from "./utils/pages";
 
 export default function App() {
     return (
@@ -13,6 +13,7 @@ export default function App() {
                         element={<page.component />}
                     />
                 ))}
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Route>
         </Routes>

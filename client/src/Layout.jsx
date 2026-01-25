@@ -5,7 +5,7 @@ import Header from "./elements/Header";
 import Navbar from "./elements/Navbar";
 import Footer from "./elements/Footer";
 
-import { finalPages, NotFoundPage } from "./utils/pages";
+import { finalPages, NotFoundPage, LoginPage } from "./utils/pages";
 
 import "./styles/Layout.css";
 
@@ -24,7 +24,9 @@ export default function Layout() {
         );
 
         // If found, render the corresponding component
-        if (currentPage) {
+        if (displayLocation.pathname === "/login") {
+            return <LoginPage />;
+        } else if (currentPage) {
             const Component = currentPage.component;
             return <Component />;
         }

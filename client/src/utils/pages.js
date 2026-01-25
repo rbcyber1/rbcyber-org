@@ -35,3 +35,4 @@ export const finalPages = Object.entries(pages)
 
 // Export NotFound page separately for use in routing
 export const NotFoundPage = pages["../pages/NotFound.jsx"]?.default;
+export const LoginPage = pages["../pages/Login.jsx"]?.default;

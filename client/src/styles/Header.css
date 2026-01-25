@@ -10,8 +10,13 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     height: 90px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+}
+
+.header-content {
+    flex: 1;
 }
 
 header h1 {
@@ -28,6 +33,35 @@ header h1 {
     display: inline-block;
 }
 
+.login {
+    margin-left: auto;
+}
+
+.header-link {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.87);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border: 2px solid #646cff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.header-link:hover {
+    background-color: #646cff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+}
+
+.header-link:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(100, 108, 255, 0.2);
+}
+
 @media (max-width: 768px) {
     header {
         left: 0;
@@ -38,5 +72,10 @@ header h1 {
     header h1 {
         font-size: 1.4rem;
         padding: 0.2rem 0;
+    }
+
+    .header-link {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 }
