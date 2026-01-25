@@ -1,41 +1,24 @@
-import reactLogo from "/react.svg";
-import viteLogo from "/vite.svg";
-import "../styles/Home.css";
-
-function getYear() {
-    return new Date().getFullYear();
-}
+import "../styles/Pages.css";
 
 export default function Home() {
     return (
-        <div className="home-container">
+        <div className="page-content">
             <div>
-                <a href="https://vite.dev" target="_blank">
-                    <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank">
-                    <img
-                        src={reactLogo}
-                        className="logo react"
-                        alt="React logo"
-                    />
-                </a>
+                <img
+                    src="/logo.png"
+                    alt="RB Cyber Logo"
+                    style={{ maxWidth: "300px" }}
+                />
             </div>
-            <h1>Welcome!</h1>
-            <div className="card">
+            <div>
+                <h1>Welcome!</h1>
                 <p>
-                    <a href="https://rbcyber.org/">rbcyber.org</a> is currently
-                    undergoing maintenance. Check the{" "}
+                    <a href="https://rbcyber.org">rbcyber.org</a> is currently
+                    under maintenance. Please visit the{" "}
                     <a href="https://github.com/rbcyber1/rbcyber-org">
                         GitHub repository
                     </a>{" "}
                     for updates.
-                </p>
-            </div>
-            <div className="footer">
-                <p>
-                    Copyright &copy; {getYear()} Rancho Bernardo Cybersecurity Club. Permitted use for
-                    non-commercial purposes only.
                 </p>
             </div>
         </div>

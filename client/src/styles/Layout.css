@@ -7,10 +7,12 @@
 .main-content {
     flex: 1;
     margin-left: 10%;
+    margin-top: 90px;
+    margin-bottom: 3.5rem;
     width: calc(90%);
     box-sizing: border-box;
     overflow-y: auto;
-    height: 100%;
+    height: calc(100vh - 90px - 3.5rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,9 +20,50 @@
     padding: 2rem;
 }
 
+.page-transition {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-transition.fadeIn {
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+.page-transition.fadeOut {
+    animation: fadeOut 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
 @media (max-width: 768px) {
     .main-content {
         margin-left: 0;
         width: 100%;
+        margin-top: 70px;
+        margin-bottom: 3rem;
+        height: calc(100vh - 70px - 3rem);
     }
 }
