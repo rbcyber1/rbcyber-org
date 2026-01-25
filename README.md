@@ -35,4 +35,4 @@ Please PR to the dev branch, as it makes it easier to integrate features into th
 
 ## Credits
 
-Great thanks to @ZakiPotato for providing the necessary hardware and funding to operate this website.
+Great thanks to [@ZakiPotato](https://github.com/ZakiPotato) and [@FoolishRoach](https://github.com/FoolishRoach) for providing the necessary hardware and funding to operate this website.
