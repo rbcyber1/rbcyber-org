@@ -5,24 +5,24 @@ import Header from "./elements/Header";
 import Navbar from "./elements/Navbar";
 import Footer from "./elements/Footer";
 
-import { pages, NotFoundPage } from "./utils/pages";
+import { finalPages, NotFoundPage } from "./utils/pages";
 
 import "./styles/Layout.css";
 
 export default function Layout() {
     const location = useLocation();
     const [displayLocation, setDisplayLocation] = useState(location);
-    const [transitionStage, setTransitionStage] = useState("fadeIn");
+
+    const needsTransition = location.pathname !== displayLocation.pathname;
+    const transitionStage = needsTransition ? "fadeOut" : "fadeIn";
 
     useEffect(() => {
-        if (location.pathname !== displayLocation.pathname) {
-            setTransitionStage("fadeOut");
-        }
-    }, [location, displayLocation]);
+        console.log("Current location:", location.pathname);
+    }, [location]);
 
     // Find the component to render based on displayLocation
     const getCurrentComponent = () => {
-        const currentPage = pages.find(
+        const currentPage = finalPages.find(
             (page) => page.path === displayLocation.pathname,
         );
 
@@ -42,8 +42,7 @@ export default function Layout() {
                 <div
                     className={`page-transition ${transitionStage}`}
                     onAnimationEnd={() => {
-                        if (transitionStage === "fadeOut") {
-                            setTransitionStage("fadeIn");
+                        if (needsTransition && transitionStage === "fadeOut") {
                             setDisplayLocation(location);
                         }
                     }}

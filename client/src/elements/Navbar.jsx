@@ -1,4 +1,4 @@
-import { pages } from "../utils/pages";
+import { finalPages } from "../utils/pages";
 import Corner from "./Corner";
 import NavElement from "./NavElement";
 import ParentNavElement from "./ParentNavElement";
@@ -10,7 +10,7 @@ export default function Navbar() {
             <Corner />
             <nav>
                 <ul>
-                    {pages.map((page) => (
+                    {finalPages.map((page) => (
                         <li key={page.children ? page.fileName : page.path}>
                             {page.children && page.children.length > 0 ?
                                 <ParentNavElement section={page} />

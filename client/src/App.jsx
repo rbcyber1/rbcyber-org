@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import { pages, NotFoundPage } from "./utils/pages";
+import { finalPages, NotFoundPage } from "./utils/pages";
 
 export default function App() {
     return (
         <Routes>
             <Route element={<Layout />}>
-                {pages.map((page) => (
+                {finalPages.map((page) => (
                     <Route
                         key={page.path}
                         path={page.path}
