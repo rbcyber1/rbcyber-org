@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Header from "./elements/Header";
 import Navbar from "./elements/Navbar";
@@ -16,21 +16,20 @@ export default function Layout() {
     const needsTransition = location.pathname !== displayLocation.pathname;
     const transitionStage = needsTransition ? "fadeOut" : "fadeIn";
 
-    useEffect(() => {
-        console.log("Current location:", location.pathname);
-    }, [location]);
-
     // Find the component to render based on displayLocation
     const getCurrentComponent = () => {
+        // Find the page that matches the current display location
         const currentPage = finalPages.find(
             (page) => page.path === displayLocation.pathname,
         );
 
+        // If found, render the corresponding component
         if (currentPage) {
             const Component = currentPage.component;
             return <Component />;
         }
 
+        // If no matching page is found, render the NotFoundPage
         return <NotFoundPage />;
     };
 
@@ -40,6 +39,7 @@ export default function Layout() {
             <Navbar />
             <main className="main-content">
                 <div
+                    // Apply transition classes based on the current stage
                     className={`page-transition ${transitionStage}`}
                     onAnimationEnd={() => {
                         if (needsTransition && transitionStage === "fadeOut") {
