@@ -6,23 +6,55 @@ footer {
     background-color: #1a1a1a;
     padding: 1rem 2rem;
     border-top: 1px solid #333;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 100;
 }
 
-footer p {
+.copyright p {
     margin: 0;
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.6);
+}
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: brightness(0.7);
+}
+
+.social-icon:hover {
+    filter: brightness(1.2);
+    transform: translateY(-3px) scale(1.1);
+}
+
+.social-icon:active {
+    transform: translateY(-1px) scale(1.05);
 }
 
 @media (max-width: 768px) {
     footer {
         left: 0;
         padding: 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
-    footer p {
+    .copyright p {
         font-size: 0.8rem;
+    }
+
+    .social-icon {
+        width: 20px;
+        height: 20px;
     }
 }

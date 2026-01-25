@@ -1,36 +1,37 @@
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import Header from "./elements/Header";
 import Navbar from "./elements/Navbar";
 import Footer from "./elements/Footer";
 
-import { pages, NotFoundPage } from "./utils/pages";
+import { finalPages, NotFoundPage, LoginPage } from "./utils/pages";
 
 import "./styles/Layout.css";
 
 export default function Layout() {
     const location = useLocation();
     const [displayLocation, setDisplayLocation] = useState(location);
-    const [transitionStage, setTransitionStage] = useState("fadeIn");
 
-    useEffect(() => {
-        if (location.pathname !== displayLocation.pathname) {
-            setTransitionStage("fadeOut");
-        }
-    }, [location, displayLocation]);
+    const needsTransition = location.pathname !== displayLocation.pathname;
+    const transitionStage = needsTransition ? "fadeOut" : "fadeIn";
 
     // Find the component to render based on displayLocation
     const getCurrentComponent = () => {
-        const currentPage = pages.find(
+        // Find the page that matches the current display location
+        const currentPage = finalPages.find(
             (page) => page.path === displayLocation.pathname,
         );
 
-        if (currentPage) {
+        // If found, render the corresponding component
+        if (displayLocation.pathname === "/login") {
+            return <LoginPage />;
+        } else if (currentPage) {
             const Component = currentPage.component;
             return <Component />;
         }
 
+        // If no matching page is found, render the NotFoundPage
         return <NotFoundPage />;
     };
 
@@ -40,10 +41,10 @@ export default function Layout() {
             <Navbar />
             <main className="main-content">
                 <div
+                    // Apply transition classes based on the current stage
                     className={`page-transition ${transitionStage}`}
                     onAnimationEnd={() => {
-                        if (transitionStage === "fadeOut") {
-                            setTransitionStage("fadeIn");
+                        if (needsTransition && transitionStage === "fadeOut") {
                             setDisplayLocation(location);
                         }
                     }}
