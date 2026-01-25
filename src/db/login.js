@@ -1,23 +1,24 @@
+import path from "path";
 import bcrypt from "bcrypt";
 import dotenv from "dotenv";
 
 import pool from "./index.js";
 
-dotenv.config();
+dotenv.config({ path: path.dirname("../config/.env") });
 
 const DEFAULT_ADMIN_PASS =
     process.env.DEFAULT_ADMIN_PASS ? process.env.DEFAULT_ADMIN_PASS : "admin"; // Do not use this password in production.
 
-function generateSalt() {
+const generateSalt = () => {
     return Math.floor(Math.random() * 900 + 100).toString();
-}
+};
 
-async function hashPasswordWithSalt(password, salt) {
+const hashPasswordWithSalt = async (password, salt) => {
     const saltedPassword = password + salt;
     return await bcrypt.hash(saltedPassword, 10);
-}
+};
 
-async function createLoginTable() {
+export const createLoginTable = async () => {
     const createTableQuery = `
         CREATE TABLE IF NOT EXISTS logins (
             id INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,4 +38,4 @@ async function createLoginTable() {
         VALUES ('admin', ?, ?, TRUE)
     `;
     await pool.execute(defaultAdminQuery, [adminHash, adminSalt]);
-}
+};

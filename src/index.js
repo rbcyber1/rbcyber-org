@@ -5,6 +5,8 @@ import { fileURLToPath } from "url";
 
 import dotenv from "dotenv";
 
+import { createLoginTable } from "./db/login.js";
+
 import logger from "./middleware/logger.js";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -15,6 +17,8 @@ dotenv.config({ path: path.join(__dirname, "./config/.env") });
 
 const app = express();
 const PORT = process.env.RBCYBER_PORT || 3000; // Configure with dotenv, default to 3000
+
+createLoginTable();
 
 app.use(logger);
 app.use(express.static(distPath));
