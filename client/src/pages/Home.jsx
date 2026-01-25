@@ -27,14 +27,14 @@ export default function Home() {
                     <a href="https://rbcyber.org/">rbcyber.org</a> is currently
                     undergoing maintenance. Check the{" "}
                     <a href="https://github.com/rbcyber1/rbcyber-org">
-                        GitHub repo
+                        GitHub repository
                     </a>{" "}
                     for updates.
                 </p>
             </div>
             <div className="footer">
                 <p>
-                    Copyright &copy; {getYear()} rbcyber.org. Permitted use for
+                    Copyright &copy; {getYear()} Rancho Bernardo Cybersecurity Club. Permitted use for
                     non-commercial purposes only.
                 </p>
             </div>
