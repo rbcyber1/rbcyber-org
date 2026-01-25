@@ -7,12 +7,12 @@
 .main-content {
     flex: 1;
     margin-left: 10%;
-    margin-top: 4.5rem;
+    margin-top: 90px;
     margin-bottom: 3.5rem;
     width: calc(90%);
     box-sizing: border-box;
     overflow-y: auto;
-    height: calc(100vh - 8rem);
+    height: calc(100vh - 90px - 3.5rem);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,8 +24,8 @@
     .main-content {
         margin-left: 0;
         width: 100%;
-        margin-top: 4rem;
+        margin-top: 70px;
         margin-bottom: 3rem;
-        height: calc(100vh - 7rem);
+        height: calc(100vh - 70px - 3rem);
     }
 }
