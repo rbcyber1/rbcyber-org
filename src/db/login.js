@@ -1,7 +1,12 @@
-import pool from "./index.js";
 import bcrypt from "bcrypt";
+import dotenv from "dotenv";
 
-const DEFAULT_ADMIN_PASS = "admin"; // Do not use this password in production.
+import pool from "./index.js";
+
+dotenv.config();
+
+const DEFAULT_ADMIN_PASS =
+    process.env.DEFAULT_ADMIN_PASS ? process.env.DEFAULT_ADMIN_PASS : "admin"; // Do not use this password in production.
 
 function generateSalt() {
     return Math.floor(Math.random() * 900 + 100).toString();
