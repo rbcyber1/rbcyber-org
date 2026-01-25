@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 import "../styles/Header.css";
+import { getLoggedInUser } from "../utils/login";
 
 export default function Header() {
     return (
@@ -10,7 +11,7 @@ export default function Header() {
             </div>
             <div className="login">
                 <NavLink to="/login" className="header-link">
-                    Login
+                    {getLoggedInUser() === "Guest" ? "Login" : "Logout"}
                 </NavLink>
             </div>
         </header>

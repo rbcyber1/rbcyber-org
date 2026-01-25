@@ -1,4 +1,3 @@
-export function isLoggedIn() {
-    // Placeholder implementation
-    return false;
+export function getLoggedInUser() {
+    return "Guest";
 }
