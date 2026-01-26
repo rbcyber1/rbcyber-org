@@ -24,10 +24,6 @@ export default function Login() {
     const showMessage = (title, message, isError) => {
         setPopupConfig({ title, message, isError });
         setShowPopup(true);
-
-        setTimeout(() => {
-            setShowPopup(false);
-        }, 2000);
     };
 
     const handleSubmit = async (e) => {
