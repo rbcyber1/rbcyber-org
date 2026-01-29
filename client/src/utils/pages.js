@@ -1,6 +1,9 @@
 // Import all JSX page components from the pages directory
 const pages = import.meta.glob("../pages/*.jsx", { eager: true });
 
+// Import all subpages from page folders (must be static)
+const allSubpageModules = import.meta.glob("../pages/*/*.jsx", { eager: true });
+
 const EXCLUDED_PAGES = ["NotFound.jsx", "Login.jsx"];
 
 export const finalPages = Object.entries(pages)
@@ -20,10 +23,19 @@ export const finalPages = Object.entries(pages)
         // Format display name by adding spaces before capital letters
         const displayName = fileName.replace(/([A-Z])/g, " $1").trim();
 
+        // Check if this page has subpages by looking in allSubpageModules
+        const hasSubpages = Object.keys(allSubpageModules).some(
+            (subpagePath) => {
+                const folderName = subpagePath.split("/").slice(-2)[0];
+                return folderName.toLowerCase() === fileName.toLowerCase();
+            },
+        );
+
         return {
             path: finalRoute,
             name: displayName,
             devName: fileName,
+            hasSubpages: hasSubpages,
             component: module.default, // Use the default export as the component
         };
     })
@@ -33,9 +45,6 @@ export const finalPages = Object.entries(pages)
         if (b.path === "/") return 1;
         return a.name.localeCompare(b.name);
     });
-
-// Import all subpages from page folders
-const allSubpageModules = import.meta.glob("../pages/*/*.jsx", { eager: true });
 
 export const finalSubpages = Object.entries(allSubpageModules)
     .map(([path, module]) => {

@@ -24,14 +24,17 @@ export default function Navbar() {
                 <ul>
                     {finalPages.map((page) => (
                         <li key={page.path}>
-                            <ParentNavElement page={page}>
-                                {createSubpageNav(
-                                    finalSubpages.filter(
-                                        (subpage) =>
-                                            subpage.parentPath === page.path,
-                                    ),
-                                )}
-                            </ParentNavElement>
+                            {page.hasSubpages ?
+                                <ParentNavElement page={page}>
+                                    {createSubpageNav(
+                                        finalSubpages.filter(
+                                            (subpage) =>
+                                                subpage.parentPath ===
+                                                page.path,
+                                        ),
+                                    )}
+                                </ParentNavElement>
+                            :   <NavElement page={page} />}
                         </li>
                     ))}
                 </ul>
