@@ -31,7 +31,9 @@ export default function ParentNavElement({ page, children }) {
                     </span>
                 </button>
             </div>
-            {isExpanded && <div className="nav-subpages">{children}</div>}
+            <div className={`nav-subpages ${isExpanded ? "open" : ""}`}>
+                {children}
+            </div>
         </div>
     );
 }
