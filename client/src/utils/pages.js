@@ -23,6 +23,7 @@ export const finalPages = Object.entries(pages)
         return {
             path: finalRoute,
             name: displayName,
+            devName: fileName,
             component: module.default, // Use the default export as the component
         };
     })
@@ -32,6 +33,38 @@ export const finalPages = Object.entries(pages)
         if (b.path === "/") return 1;
         return a.name.localeCompare(b.name);
     });
+
+// Import all subpages from page folders
+const allSubpageModules = import.meta.glob("../pages/*/*.jsx", { eager: true });
+
+export const finalSubpages = Object.entries(allSubpageModules)
+    .map(([path, module]) => {
+        // Extract folder name and file name
+        const pathParts = path.split("/");
+        const fileName = pathParts.pop().replace(".jsx", "");
+        const folderName = pathParts.pop();
+
+        // Find the parent page
+        const parentPage = finalPages.find(
+            (page) => page.devName.toLowerCase() === folderName,
+        );
+
+        if (!parentPage) return null;
+
+        // Create the full route path
+        const subpagePath = `${parentPage.path === "/" ? "" : parentPage.path}/${fileName.toLowerCase()}`;
+
+        // Format display name
+        const displayName = fileName.replace(/([A-Z])/g, " $1").trim();
+
+        return {
+            path: subpagePath,
+            name: displayName,
+            component: module.default,
+            parentPath: parentPage.path, // Add parent path for easy filtering
+        };
+    })
+    .filter(Boolean);
 
 // Export NotFound page separately for use in routing
 export const NotFoundPage = pages["../pages/NotFound.jsx"]?.default;

@@ -1,6 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
-import { finalPages, NotFoundPage, LoginPage } from "./utils/pages";
+import {
+    finalPages,
+    finalSubpages,
+    NotFoundPage,
+    LoginPage,
+} from "./utils/pages";
+
+// ...existing code...
 
 export default function App() {
     return (
@@ -11,6 +18,13 @@ export default function App() {
                         key={page.path}
                         path={page.path}
                         element={<page.component />}
+                    />
+                ))}
+                {finalSubpages.map((subpage) => (
+                    <Route
+                        key={subpage.path}
+                        path={subpage.path}
+                        element={<subpage.component />}
                     />
                 ))}
                 <Route path="/login" element={<LoginPage />} />

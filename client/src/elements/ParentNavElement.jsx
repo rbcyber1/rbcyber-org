@@ -1,7 +1,6 @@
 import { useState } from "react";
-import SubNavElement from "./SubNavElement";
 
-export default function ParentNavElement({ section }) {
+export default function ParentNavElement({ page, children }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleSection = () => {
@@ -11,20 +10,12 @@ export default function ParentNavElement({ section }) {
     return (
         <div className="nav-section">
             <button className="nav-section-header" onClick={toggleSection}>
-                <span>{section.name}</span>
+                <span>{page.name}</span>
                 <span className={`arrow ${isExpanded ? "expanded" : ""}`}>
                     ▶
                 </span>
             </button>
-            {isExpanded && (
-                <ul className="nav-submenu">
-                    {section.children.map((child) => (
-                        <li key={child.path}>
-                            <SubNavElement page={child} />
-                        </li>
-                    ))}
-                </ul>
-            )}
+            {isExpanded && children}
         </div>
     );
 }

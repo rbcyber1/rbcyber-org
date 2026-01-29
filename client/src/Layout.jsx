@@ -5,7 +5,12 @@ import Header from "./elements/Header";
 import Navbar from "./elements/Navbar";
 import Footer from "./elements/Footer";
 
-import { finalPages, NotFoundPage, LoginPage } from "./utils/pages";
+import {
+    finalPages,
+    finalSubpages,
+    NotFoundPage,
+    LoginPage,
+} from "./utils/pages";
 
 import "./styles/Layout.css";
 
@@ -19,9 +24,11 @@ export default function Layout() {
     // Find the component to render based on displayLocation
     const getCurrentComponent = () => {
         // Find the page that matches the current display location
-        const currentPage = finalPages.find(
-            (page) => page.path === displayLocation.pathname,
-        );
+        const currentPage =
+            finalPages.find((page) => page.path === displayLocation.pathname) ||
+            finalSubpages.find(
+                (subpage) => subpage.path === displayLocation.pathname,
+            );
 
         // If found, render the corresponding component
         if (displayLocation.pathname === "/login") {
