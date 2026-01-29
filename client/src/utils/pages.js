@@ -17,8 +17,11 @@ export const finalPages = Object.entries(pages)
         const fileName = path.split("/").pop().replace(".jsx", "");
 
         // Assign home page to root path
-        const finalRoute =
-            fileName === "Home" ? "/" : `/${fileName.toLowerCase()}`;
+        // Convert camelCase/PascalCase to kebab-case for URLs
+        const kebabCase = fileName
+            .replace(/([a-z])([A-Z])/g, "$1-$2")
+            .toLowerCase();
+        const finalRoute = fileName === "Home" ? "/" : `/${kebabCase}`;
 
         // Format display name by adding spaces before capital letters
         const displayName = fileName.replace(/([A-Z])/g, " $1").trim();
@@ -60,8 +63,13 @@ export const finalSubpages = Object.entries(allSubpageModules)
 
         if (!parentPage) return null;
 
+        // Convert camelCase/PascalCase to kebab-case for URLs
+        const kebabCase = fileName
+            .replace(/([a-z])([A-Z])/g, "$1-$2")
+            .toLowerCase();
+
         // Create the full route path
-        const subpagePath = `${parentPage.path === "/" ? "" : parentPage.path}/${fileName.toLowerCase()}`;
+        const subpagePath = `${parentPage.path === "/" ? "" : parentPage.path}/${kebabCase}`;
 
         // Format display name
         const displayName = fileName.replace(/([A-Z])/g, " $1").trim();
