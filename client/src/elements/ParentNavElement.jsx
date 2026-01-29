@@ -1,21 +1,37 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function ParentNavElement({ page, children }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const toggleSection = () => {
+    const toggleSection = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         setIsExpanded(!isExpanded);
     };
 
     return (
         <div className="nav-section">
-            <button className="nav-section-header" onClick={toggleSection}>
-                <span>{page.name}</span>
-                <span className={`arrow ${isExpanded ? "expanded" : ""}`}>
-                    ▶
-                </span>
-            </button>
-            {isExpanded && children}
+            <div className="nav-section-header">
+                <NavLink
+                    className={({ isActive }) =>
+                        isActive ? "nav-links active" : "nav-links"
+                    }
+                    to={page.path}
+                >
+                    {page.name}
+                </NavLink>
+                <button
+                    className="expand-toggle"
+                    onClick={toggleSection}
+                    aria-label={isExpanded ? "Collapse" : "Expand"}
+                >
+                    <span className={`arrow ${isExpanded ? "expanded" : ""}`}>
+                        ▶
+                    </span>
+                </button>
+            </div>
+            {isExpanded && <div className="nav-subpages">{children}</div>}
         </div>
     );
 }

@@ -77,6 +77,81 @@ nav li {
     border-radius: 50%;
 }
 
+.nav-section {
+    width: 100%;
+}
+
+.nav-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.nav-section-header .nav-links {
+    flex: 1;
+    margin: 0 0.25rem;
+}
+
+.expand-toggle {
+    flex-shrink: 0;
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.expand-toggle:hover {
+    background-color: #2d2d2d;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.expand-toggle:focus {
+    outline: 2px solid #646cff;
+    outline-offset: 2px;
+}
+
+.expand-toggle .arrow {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.expand-toggle .arrow.expanded {
+    transform: rotate(90deg);
+}
+
+.nav-subpages {
+    margin-top: 0.25rem;
+    padding-left: 1rem;
+    border-left: 2px solid #2d2d2d;
+    margin-left: 0.5rem;
+}
+
+.nav-subpages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.nav-subpages .nav-links {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+}
+
+.nav-subpages .nav-links:hover {
+    padding-left: 1.15rem;
+}
+
 @media (max-width: 768px) {
     .navbar-container {
         width: 100%;
@@ -100,5 +175,31 @@ nav li {
 
     .nav-links.active {
         margin: 0 0.15rem;
+    }
+
+    .nav-section-header {
+        gap: 0.35rem;
+    }
+
+    .expand-toggle {
+        padding: 0.4rem;
+    }
+
+    .expand-toggle .arrow {
+        font-size: 0.7rem;
+    }
+
+    .nav-subpages {
+        padding-left: 0.75rem;
+        margin-left: 0.35rem;
+    }
+
+    .nav-subpages .nav-links {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .nav-subpages .nav-links:hover {
+        padding-left: 0.9rem;
     }
 }
