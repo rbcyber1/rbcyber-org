@@ -62,20 +62,70 @@ header h1 {
     box-shadow: 0 2px 6px rgba(100, 108, 255, 0.2);
 }
 
-@media (max-width: 768px) {
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
     header {
         left: 0;
-        padding: 1rem;
-        height: 70px;
+        padding: 0.875rem 1.5rem;
+        height: 80px;
     }
 
     header h1 {
-        font-size: 1.4rem;
-        padding: 0.2rem 0;
+        font-size: 1.6rem;
     }
 
     .header-link {
-        padding: 0.5rem 1rem;
+        padding: 0.55rem 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+    header {
+        left: 0;
+        padding: 0.75rem 1rem;
+        height: 60px;
+    }
+
+    header h1 {
+        font-size: 1.2rem;
+        padding: 0.15rem 0;
+    }
+
+    .header-link {
+        padding: 0.45rem 1rem;
         font-size: 0.85rem;
+    }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem 0.75rem;
+        height: 55px;
+    }
+
+    header h1 {
+        font-size: 1rem;
+        padding: 0.1rem 0;
+    }
+
+    .header-link {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        border-width: 1.5px;
+    }
+}
+
+/* Very small mobile breakpoint */
+@media (max-width: 360px) {
+    header h1 {
+        font-size: 0.9rem;
+    }
+
+    .header-link {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.75rem;
     }
 }

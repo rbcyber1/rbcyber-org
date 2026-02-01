@@ -167,6 +167,29 @@ nav li {
     padding-left: 1.15rem;
 }
 
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+    .navbar-container {
+        width: 100%;
+        min-width: unset;
+        height: auto;
+        flex-direction: column;
+    }
+
+    nav {
+        border-right: none;
+        border-top: 1px solid #333;
+        max-height: calc(100vh - 80px);
+        padding: 0.65rem;
+    }
+
+    .nav-links {
+        font-size: 0.9rem;
+        padding: 0.7rem 0.9rem;
+    }
+}
+
+/* Mobile breakpoint */
 @media (max-width: 768px) {
     .navbar-container {
         width: 100%;
@@ -178,13 +201,13 @@ nav li {
     nav {
         border-right: none;
         border-top: 1px solid #333;
-        max-height: calc(100vh - 70px);
+        max-height: calc(100vh - 60px);
         padding: 0.5rem;
     }
 
     .nav-links {
-        font-size: 0.9rem;
-        padding: 0.65rem 0.85rem;
+        font-size: 0.85rem;
+        padding: 0.6rem 0.8rem;
         margin: 0 0.15rem;
     }
 
@@ -217,11 +240,80 @@ nav li {
     }
 
     .nav-subpages .nav-links {
-        font-size: 0.85rem;
-        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.7rem;
     }
 
     .nav-subpages .nav-links:hover {
-        padding-left: 0.9rem;
+        padding-left: 0.85rem;
+    }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+    nav {
+        max-height: calc(100vh - 55px);
+        padding: 0.4rem;
+    }
+
+    .nav-links {
+        font-size: 0.8rem;
+        padding: 0.5rem 0.7rem;
+        margin: 0 0.1rem;
+    }
+
+    .nav-links.active {
+        margin: 0 0.1rem;
+    }
+
+    .nav-section-header {
+        gap: 0.3rem;
+    }
+
+    .expand-toggle {
+        padding: 0.35rem;
+    }
+
+    .expand-toggle .arrow {
+        font-size: 0.65rem;
+    }
+
+    .nav-subpages {
+        padding-left: 0.6rem;
+        margin-left: 0.3rem;
+    }
+
+    .nav-subpages.open {
+        max-height: 350px;
+    }
+
+    .nav-subpages .nav-links {
+        font-size: 0.75rem;
+        padding: 0.45rem 0.6rem;
+    }
+
+    .nav-subpages .nav-links:hover {
+        padding-left: 0.75rem;
+    }
+}
+
+/* Very small mobile breakpoint */
+@media (max-width: 360px) {
+    nav {
+        padding: 0.35rem;
+    }
+
+    .nav-links {
+        font-size: 0.75rem;
+        padding: 0.45rem 0.6rem;
+    }
+
+    .expand-toggle {
+        padding: 0.3rem;
+    }
+
+    .nav-subpages .nav-links {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.5rem;
     }
 }

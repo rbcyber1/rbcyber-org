@@ -2,11 +2,13 @@
     text-align: center;
     max-width: 800px;
     width: 100%;
+    padding: 0 1rem;
 }
 
 .page-content h1 {
     margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.87);
+    font-size: 2.5rem;
 }
 
 .page-content p {
@@ -29,4 +31,84 @@
 .page-content img {
     display: block;
     margin: 0 auto 1.5rem;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+    .page-content {
+        max-width: 700px;
+        padding: 0 0.875rem;
+    }
+
+    .page-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .page-content p {
+        font-size: 1.05rem;
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+    .page-content {
+        max-width: 100%;
+        padding: 0 0.75rem;
+    }
+
+    .page-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .page-content p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .page-content img {
+        margin-bottom: 1.25rem;
+    }
+}
+
+/* Small mobile breakpoint */
+@media (max-width: 480px) {
+    .page-content {
+        padding: 0 0.5rem;
+    }
+
+    .page-content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.65rem;
+    }
+
+    .page-content p {
+        font-size: 0.875rem;
+        line-height: 1.45;
+        margin: 0.4rem 0;
+    }
+
+    .page-content img {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Very small mobile breakpoint */
+@media (max-width: 360px) {
+    .page-content {
+        padding: 0 0.4rem;
+    }
+
+    .page-content h1 {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .page-content p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
 }
