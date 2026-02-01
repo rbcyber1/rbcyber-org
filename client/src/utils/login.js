@@ -18,11 +18,12 @@ export async function login(username, password) {
 
         localStorage.setItem("username", data.user.username);
         localStorage.setItem("token", data.token);
-        localStorage.setItem("isAdmin", data.user.isAdmin);
+        // Convert to boolean then to string for consistent storage
+        localStorage.setItem("isAdmin", String(!!data.user.isAdmin));
 
         return { success: true, user: data.user };
     } catch (error) {
-        return { success: false, message: error.message };
+        return { success: false, error: error.message };
     }
 }
 
@@ -51,7 +52,7 @@ export async function verifyToken() {
     }
 
     try {
-        const response = await fetch(`${API_BASE}/verify-token`, {
+        const response = await fetch(`${API_BASE}/verify`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

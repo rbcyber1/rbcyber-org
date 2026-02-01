@@ -1,25 +1,45 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "./Layout";
+import ProtectedRoute from "./elements/ProtectedRoute";
 import {
     finalPages,
     finalSubpages,
     NotFoundPage,
     LoginPage,
+    UnauthorizedPage,
 } from "./utils/pages";
-
-// ...existing code...
 
 export default function App() {
     return (
         <Routes>
             <Route element={<Layout />}>
-                {finalPages.map((page) => (
-                    <Route
-                        key={page.path}
-                        path={page.path}
-                        element={<page.component />}
-                    />
-                ))}
+                {finalPages.map((page) => {
+                    const PageComponent = page.component;
+
+                    if (page.requiresAuth || page.requiresAdmin) {
+                        return (
+                            <Route
+                                key={page.path}
+                                path={page.path}
+                                element={
+                                    <ProtectedRoute
+                                        requiresAdmin={page.requiresAdmin}
+                                    >
+                                        <PageComponent />
+                                    </ProtectedRoute>
+                                }
+                            />
+                        );
+                    }
+
+                    return (
+                        <Route
+                            key={page.path}
+                            path={page.path}
+                            element={<PageComponent />}
+                        />
+                    );
+                })}
                 {finalSubpages.map((subpage) => (
                     <Route
                         key={subpage.path}
@@ -28,6 +48,7 @@ export default function App() {
                     />
                 ))}
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/unauthorized" element={<UnauthorizedPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Route>
         </Routes>

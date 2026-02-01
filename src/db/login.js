@@ -6,6 +6,10 @@ import { generateFullHash } from "../util/password.js";
 
 dotenv.config({ path: path.dirname("../config/.env") });
 
+const ENABLE_DEFAULT_USER =
+    process.env.ENABLE_DEFAULT_USER ? process.env.ENABLE_DEFAULT_USER : false;
+const DEFAULT_USER_PASS =
+    process.env.DEFAULT_USER_PASS ? process.env.DEFAULT_USER_PASS : "user"; // Do not use this password in production.
 const DEFAULT_ADMIN_PASS =
     process.env.DEFAULT_ADMIN_PASS ? process.env.DEFAULT_ADMIN_PASS : "admin"; // Do not use this password in production.
 
@@ -29,6 +33,17 @@ export const createLoginTable = async () => {
         VALUES ('admin', ?, ?, TRUE)
     `;
     await pool.execute(defaultAdminQuery, [adminHash, adminSalt]);
+
+    if (ENABLE_DEFAULT_USER) {
+        const { hash: userHash, salt: userSalt } =
+            await generateFullHash(DEFAULT_USER_PASS);
+
+        const defaultUserQuery = `
+            INSERT IGNORE INTO logins (username, password_hash, password_salt, is_admin)
+            VALUES ('user', ?, ?, FALSE)
+        `;
+        await pool.execute(defaultUserQuery, [userHash, userSalt]);
+    }
 };
 
 export const addUser = async (username, password, isAdmin = false) => {
