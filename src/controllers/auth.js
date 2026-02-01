@@ -2,6 +2,11 @@ import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET || "secret";
 
+const PROTECTED_ROUTES = {
+    admin: ["/admin"],
+    user: ["/profile"],
+};
+
 export const authenticateToken = (req, res, next) => {
     const authHeader = req.headers.authorization;
 
