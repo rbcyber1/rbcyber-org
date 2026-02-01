@@ -51,7 +51,7 @@ export async function verifyToken() {
     }
 
     try {
-        const response = await fetch(`${API_BASE}/verify-token`, {
+        const response = await fetch(`${API_BASE}/verify`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

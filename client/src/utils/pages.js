@@ -3,6 +3,8 @@ const pages = import.meta.glob("../pages/*.jsx", { eager: true });
 
 const allSubpageModules = import.meta.glob("../pages/*/*.jsx", { eager: true });
 
+const PROTECTED_PAGES = ["Admin.jsx", "Profile.jsx"];
+const ADMIN_PAGES = ["Admin.jsx"];
 const EXCLUDED_PAGES = ["NotFound.jsx", "Unauthorized.jsx", "Login.jsx"];
 
 export const finalPages = Object.entries(pages)
@@ -33,6 +35,8 @@ export const finalPages = Object.entries(pages)
             name: displayName,
             devName: fileName,
             hasSubpages: hasSubpages,
+            requiresAuth: PROTECTED_PAGES.includes(`${fileName}.jsx`),
+            requiresAdmin: ADMIN_PAGES.includes(`${fileName}.jsx`),
             component: module.default, // Use the default export as the component
         };
     })

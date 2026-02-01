@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 
 import { createLoginTable } from "./db/login.js";
 import logger from "./middleware/logger.js";
+import { authenticateToken, requireAdmin } from "./controllers/auth.js";
 
 import loginRoutes from "./routes/login.js";
 import logoutRoutes from "./routes/logout.js";
