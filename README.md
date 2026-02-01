@@ -27,7 +27,7 @@ Setup may be abnormal compared to other web projects; a sample dotenv is provide
 
 ### Convenience
 
-It may be optimal to set up a build script that does this manually. For example, `systemd` does all the heavy lifting by automatically building the website; it updates the server's dynamic IP address for both GitHub Actions and Cloudflare DNS. The scripts I use for production are provided in the `/tools/` directory. Make sure to replace path variables with your system's scripting path.
+It may be optimal to set up a build script that does this manually. For example, `systemd` does all the heavy lifting by automatically building the website. Additionally, other init system services update the server's dynamic IP address for both GitHub Actions and Cloudflare's DNS records. The scripts I use for production are provided in the `/tools/` directory. Make sure to replace path variables with your system's scripting path.
 
 ## Contributing
 
@@ -35,4 +35,4 @@ Please PR to the dev branch, as it makes it easier to integrate features into th
 
 ## Credits
 
-Great thanks to @ZakiPotato for providing the necessary hardware and funding to operate this website.
+Great thanks to [@ZakiPotato](https://github.com/ZakiPotato) and [@FoolishRoach](https://github.com/FoolishRoach) for providing the necessary hardware and funding to operate this website.
