@@ -36,6 +36,17 @@ export default function Footer() {
                         alt="GitHub"
                     />
                 </a>
+                <a
+                    href="https://discord.gg/SqctanM3b7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        className="social-icon"
+                        src="/discord.svg"
+                        alt="Discord"
+                    />
+                </a>
             </div>
         </footer>
     );
