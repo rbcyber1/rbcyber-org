@@ -4,7 +4,7 @@ const pages = import.meta.glob("../pages/*.jsx", { eager: true });
 // Import all subpages from page folders (must be static)
 const allSubpageModules = import.meta.glob("../pages/*/*.jsx", { eager: true });
 
-const EXCLUDED_PAGES = ["NotFound.jsx", "Login.jsx"];
+const EXCLUDED_PAGES = ["NotFound.jsx", "Unauthorized.jsx", "Login.jsx"];
 
 export const finalPages = Object.entries(pages)
     .filter(([path]) => {
