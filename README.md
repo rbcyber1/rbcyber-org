@@ -22,7 +22,7 @@ Setup may be abnormal compared to other web projects; a sample dotenv is provide
 
 1. Install `mysqld` and `mysql-client`; alternatively, you can opt for MariaDB. Configure as necessary. Install, at minimum, Node 22 and the latest version of your preferred package manager.
 2. Clone the dev branch for the latest features, often a buggy mess. Then enter `/client/` and `/src/` independently and install the production dependencies.
-3. Make sure `example.env` is copied to a real `.env` file; the example is provided for convenience and is not referenced in the backend. It is very important that the values for `JWT_SECRET` and `DEFAULT_ADMIN_PASS` are changed before running in a production environment.
+3. Make sure `example.env` is copied to a real `.env` file; the example is provided for convenience and is not referenced in the backend. It is very important that the values for `JWT_SECRET`, `DEFAULT_USER_PASS`, and `DEFAULT_ADMIN_PASS` are changed before running in a production environment.
 4. Build the frontend with `npm run build` in the `/client/` directory. Navigate back to the `/src/` directory and run `npm start`. The backend should now serve all the frontend files.
 
 ### Convenience
