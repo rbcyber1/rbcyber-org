@@ -4,7 +4,9 @@
     "description": "Frontend for rbcyber.org",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "echo Not yet ready",
+        "build": "vite build",
+        "preview": "vite preview"
     },
     "repository": {
         "type": "git",
@@ -18,5 +20,6 @@
     "bugs": {
         "url": "https://github.com/rbcyber1/rbcyber-org/issues"
     },
-    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme"
+    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme",
+    "type": "module"
 }

@@ -1,22 +1,26 @@
 {
-  "name": "rbcyber-org",
-  "version": "1.0.0",
-  "description": "rbcyber.org: Updated frontend/backend monorepo",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rbcyber1/rbcyber-org.git"
-  },
-  "keywords": [
-    "cybersecurity-club"
-  ],
-  "author": "rbcyber1",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/rbcyber1/rbcyber-org/issues"
-  },
-  "homepage": "https://github.com/rbcyber1/rbcyber-org#readme"
+    "name": "rbcyber-org",
+    "version": "1.0.0",
+    "description": "rbcyber.org: Updated frontend/backend monorepo",
+    "main": "index.js",
+    "scripts": {
+        "dev": "concurrently \"cd apps/frontend && npm run dev\" \"cd apps/backend && npm run dev\"",
+        "start": "echo Not yet ready"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rbcyber1/rbcyber-org.git"
+    },
+    "keywords": [
+        "cybersecurity-club"
+    ],
+    "author": "rbcyber1",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/rbcyber1/rbcyber-org/issues"
+    },
+    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme",
+    "dependencies": {
+        "concurrently": "^10.0.5"
+    }
 }

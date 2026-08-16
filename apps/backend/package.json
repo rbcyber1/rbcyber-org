@@ -1,22 +1,31 @@
 {
-  "name": "rbcyber-org-backend",
-  "version": "1.0.0",
-  "description": "Backend for rbcyber-org website",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rbcyber1/rbcyber-org.git"
-  },
-  "keywords": [
-    "cybersecurity-club"
-  ],
-  "author": "rbcyber1",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/rbcyber1/rbcyber-org/issues"
-  },
-  "homepage": "https://github.com/rbcyber1/rbcyber-org#readme"
+    "name": "rbcyber-org-backend",
+    "version": "1.0.0",
+    "description": "Backend for rbcyber-org website",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon ./src/index.js",
+        "start": "node ./src/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rbcyber1/rbcyber-org.git"
+    },
+    "keywords": [
+        "cybersecurity-club"
+    ],
+    "author": "rbcyber1",
+    "license": "GPL-3.0",
+    "bugs": {
+        "url": "https://github.com/rbcyber1/rbcyber-org/issues"
+    },
+    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme",
+    "dependencies": {
+        "cookie-parser": "^1.4.7",
+        "dotenv": "^17.4.2",
+        "express": "^5.2.1",
+        "helmet": "^8.3.0",
+        "nodemon": "^3.1.14"
+    },
+    "type": "module"
 }
