@@ -7,7 +7,7 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-config({ path: path.resolve(__dirname, "../config/.env"), debug: true });
+config({ path: path.resolve(__dirname, "../config/.env"), quiet: true });
 
 const app = express();
 app.use(helmet());
@@ -25,5 +25,7 @@ app.listen(process.env.RBCYBER_WEB_PORT, () => {
         process.exit(1);
     }
 
-    console.log(`Server is running on port ${process.env.RBCYBER_WEB_PORT}`);
+    console.log(
+        `rbcyber-web-backend is running on port ${process.env.RBCYBER_WEB_PORT}`,
+    );
 });
