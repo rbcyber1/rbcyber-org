@@ -1,0 +1,23 @@
+# /etc/systemd/system/rbcyber-web.service
+
+[Unit]
+Description=rbcyber.org Express backend
+After=network.target
+
+[Service]
+Type=simple
+User=rbcyber-web
+Group=rbcyber-web
+WorkingDirectory=/srv/rbcyber-website/rbcyber-org
+ExecStart=/usr/bin/npm start
+Restart=on-failure
+RestartSec=5
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
