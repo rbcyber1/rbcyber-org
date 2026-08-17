@@ -4,8 +4,8 @@
     "description": "Backend for rbcyber-org website",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon ./src/index.js",
-        "start": "node ./src/index.js"
+        "dev": "NODE_ENV=development nodemon ./src/index.js",
+        "start": "NODE_ENV=production node ./src/index.js"
     },
     "repository": {
         "type": "git",
@@ -27,5 +27,8 @@
         "helmet": "^8.3.0",
         "nodemon": "^3.1.14"
     },
-    "type": "module"
+    "type": "module",
+    "devDependencies": {
+        "vite": "^8.2.1"
+    }
 }

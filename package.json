@@ -3,10 +3,13 @@
     "version": "1.0.0",
     "description": "rbcyber.org: Updated frontend/backend monorepo",
     "main": "index.js",
+    "workspaces": [
+        "apps/*"
+    ],
     "scripts": {
-        "dev": "concurrently -n client,server -c blue,green \"npm run dev -w client\" \"npm run dev -w server\"",
-        "build": "npm run build -w client",
-        "start": "npm run start -w server",
+        "dev": "npm run dev -w apps/backend",
+        "build": "npm run build -w apps/frontend",
+        "start": "npm run start -w apps/backend",
         "lint": "eslint ."
     },
     "repository": {
@@ -21,8 +24,5 @@
     "bugs": {
         "url": "https://github.com/rbcyber1/rbcyber-org/issues"
     },
-    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme",
-    "dependencies": {
-        "concurrently": "^10.0.5"
-    }
+    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme"
 }
