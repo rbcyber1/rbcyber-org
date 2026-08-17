@@ -1,7 +1,7 @@
 #!/bin/bash
 # This script is used to deploy/start rbcyber-website to a reverse proxy.
 
-RBCYBER_WEBSITE_DIR="/srv/rbcyber-website/rbcyber-org"
+RBCYBER_WEBSITE_DIR="/srv/rbcyber-web/rbcyber-org"
 
 cd $RBCYBER_WEBSITE_DIR
 git pull
