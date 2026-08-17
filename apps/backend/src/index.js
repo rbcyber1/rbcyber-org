@@ -15,7 +15,7 @@ app.use(helmet({ contentSecurityPolicy: false }));
 app.use(express.json());
 
 if (process.env.NODE_ENV !== "production") {
-    console.log("RUNNING DEV");
+    console.log("Running in development mode. Using Vite as the dev server.");
     // Dev: Express acts as the dev server.
     // Vite transforms client side code and serves it to the backend on the fly.
     const { createServer: createViteServer } = await import("vite");
@@ -26,11 +26,14 @@ if (process.env.NODE_ENV !== "production") {
     });
     app.use(vite.middlewares);
 } else {
+    console.log(
+        "Running in production mode. Using static files from the frontend build.",
+    );
     // Prod: This case is an option for users not running our infrastructure.
     // Serve to this backend itself instead of a reverse proxy.
-    app.use(express.static(path.join(clientRoot, "dist")));
+    app.use(express.static(path.join(frontendRoot, "dist")));
     app.use((req, res) => {
-        res.sendFile(path.join(clientRoot, "dist", "index.html"));
+        res.sendFile(path.join(frontendRoot, "dist", "index.html"));
     });
 }
 
