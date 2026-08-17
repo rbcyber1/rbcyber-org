@@ -1,4 +1,4 @@
-# /etc/systemd/system/multi-user.target.wants/rbcyber-web.service
+# /etc/systemd/system/rbcyber-web.service
 
 [Unit]
 Description=rbcyber.org Express backend
