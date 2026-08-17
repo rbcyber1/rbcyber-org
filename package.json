@@ -4,8 +4,10 @@
     "description": "rbcyber.org: Updated frontend/backend monorepo",
     "main": "index.js",
     "scripts": {
-        "dev": "concurrently \"cd apps/frontend && npm run dev\" \"cd apps/backend && npm run dev\"",
-        "start": "echo Not yet ready"
+        "dev": "concurrently -n client,server -c blue,green \"npm run dev -w client\" \"npm run dev -w server\"",
+        "build": "npm run build -w client",
+        "start": "npm run start -w server",
+        "lint": "eslint ."
     },
     "repository": {
         "type": "git",
