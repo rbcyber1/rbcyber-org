@@ -11,7 +11,7 @@ export default [
     js.configs.recommended,
 
     {
-        files: ["server/**/*.js", "scripts/**/*.js"],
+        files: ["apps/backend/**/*.js", "scripts/**/*.js"],
         languageOptions: {
             globals: globals.node,
             ecmaVersion: "latest",
@@ -21,10 +21,10 @@ export default [
 
     ...tseslint.configs.recommended.map((config) => ({
         ...config,
-        files: ["client/**/*.{ts,tsx}"],
+        files: ["apps/frontend/**/*.{ts,tsx}"],
     })),
     {
-        files: ["client/**/*.{ts,tsx}"],
+        files: ["apps/frontend/**/*.{ts,tsx}"],
         languageOptions: {
             globals: globals.browser,
         },
