@@ -12,7 +12,7 @@ jobs:
             - name: Run deploy script on server
               uses: appleboy/ssh-action@v1.0.3
               with:
-                  host: ${{ secrets.SSH_HOST }}
-                  username: ${{ secrets.SSH_USER }}
-                  key: ${{ secrets.SSH_PRIVATE_KEY }}
+                  host: ${{ secrets.VPS_HOST }}
+                  username: ${{ secrets.VPS_USER }}
+                  key: ${{ secrets.VPS_PRIVATE_KEY }}
                   script: /srv/rbcyber-web/rbcyber-org/scripts/deploy.sh
