@@ -1,4 +1,4 @@
-const App = () => {
+const Temp = () => {
     return (
         <div>
             <h1>rbcyber.org is currently under maintenance</h1>
@@ -11,4 +11,4 @@ const App = () => {
     );
 };
 
-export default App;
+export default Temp;
