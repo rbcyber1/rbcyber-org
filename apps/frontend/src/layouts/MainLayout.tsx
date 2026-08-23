@@ -7,17 +7,23 @@ import FooterNavbar from "../components/FooterNavbar";
 
 import { getMainRoutes } from "../scripts/routes";
 
+import "../styles/layouts/MainLayout.css";
+
 const MainLayout = () => {
     return (
         <div className="main-layout">
-            <Header />
-            <UserHeader />
-            <LevelChange level="Dashboard" />
+            <header className="header-row">
+                <LevelChange level="Dashboard" />
+                <Header />
+                <UserHeader />
+            </header>
             <main className="main-content">
                 <Outlet />
             </main>
-            <LevelChange level="Learn" />
-            <FooterNavbar items={getMainRoutes()} />
+            <footer className="footer-row">
+                <LevelChange level="Learn" />
+                <FooterNavbar items={getMainRoutes()} />
+            </footer>
         </div>
     );
 };

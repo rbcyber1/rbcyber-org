@@ -1,18 +1,26 @@
 * {
     box-sizing: border-box;
 }
+
+html,
+#root {
+    min-height: 100%;
+}
+
 body {
     margin: 0;
+    width: 100%;
+    min-height: 100vh;
 }
 
 @font-face {
     font-family: Agern;
-    src: url("../public/fonts/Agern-Regular.ttf") format("truetype");
+    src: url("/fonts/Agern-Regular.ttf") format("truetype");
 }
 
 @font-face {
     font-family: Fredoka;
-    src: url("../public/fonts/Fredoka.ttf") format("truetype");
+    src: url("/fonts/Fredoka.ttf") format("truetype");
 }
 
 :root {

@@ -1,6 +1,8 @@
+import type { NavItem } from "../types/nav";
+
 import { useLocation } from "react-router-dom";
 
-import type { NavItem } from "../types/nav";
+import "../styles/components/FooterNavbar.css";
 
 const FooterNavbar = ({ items }: { items: NavItem[] }) => {
     const location = useLocation();

@@ -1,3 +1,5 @@
+import "../styles/components/LevelChange.css";
+
 const LevelChange = ({ level }: { level: string }) => {
     return (
         <div className="level-change">

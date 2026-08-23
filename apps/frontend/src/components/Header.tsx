@@ -1,12 +1,17 @@
+import "../styles/components/Header.css";
+
 const Header = () => {
     return (
-        <header className="header">
-            <div className="header-content">
-                <h1 className="header-title">
-                    Rancho Bernardo Cybersecurity Club
-                </h1>
-            </div>
-        </header>
+        <div className="title-header">
+            <img
+                className="title-header-logo"
+                src="/imgs/logo.png"
+                alt="Club Logo"
+            />
+            <h1 className="title-header-text">
+                Rancho Bernardo Cybersecurity Club
+            </h1>
+        </div>
     );
 };
 

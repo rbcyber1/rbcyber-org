@@ -1,5 +1,7 @@
 import { getAvatarUrl } from "../scripts/user";
 
+import "../styles/components/UserHeader.css";
+
 const UserHeader = () => {
     return (
         <div className="user-header">

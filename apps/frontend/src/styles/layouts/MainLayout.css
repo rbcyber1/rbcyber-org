@@ -1,0 +1,24 @@
+.main-layout {
+    display: grid;
+    grid-template-rows: 75px 1fr 50px;
+    min-height: 100vh;
+}
+
+.header-row {
+    display: grid;
+    grid-row: 1;
+    grid-template-columns: 200px 1fr 200px;
+}
+
+.main-content {
+    display: grid;
+    grid-row: 2;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.footer-row {
+    display: grid;
+    grid-row: 3;
+    grid-template-columns: 200px 1fr 200px;
+}
