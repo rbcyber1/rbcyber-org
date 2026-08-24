@@ -1,18 +1,24 @@
-import { getAvatarUrl } from "../scripts/user";
+import { CircleUserRound } from "lucide-react";
+
+import { getAvatarUrl, doSignIn } from "../scripts/user";
 
 import "../styles/components/UserHeader.css";
 
 const UserHeader = () => {
+    const username = ""; // Placeholder for the current user's username
+
     return (
         <div className="user-header">
-            <div className="user-header-content">
-                <img
-                    className="user-header-avatar"
-                    src={getAvatarUrl("")}
-                    alt="User Avatar"
-                />
-                <h1 className="user-header-title">Guest</h1>
-            </div>
+            <button className="user-header-content" onClick={doSignIn}>
+                {getAvatarUrl(username) ?
+                    <img
+                        src={getAvatarUrl(username)}
+                        alt="User Avatar"
+                        className="user-header-avatar"
+                    />
+                :   <CircleUserRound size={36} strokeWidth={1.5} />}
+                <h1 className="user-header-title">{username || "Sign In"}</h1>
+            </button>
         </div>
     );
 };

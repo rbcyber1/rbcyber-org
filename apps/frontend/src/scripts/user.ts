@@ -1,6 +1,10 @@
-export const getAvatarUrl = (username: string): string => {
+export const doSignIn = () => {
+    alert("Currently under maintenance. Please check back later.");
+};
+
+export const getAvatarUrl = (username: string): string | undefined => {
     if (!username) {
-        return "/images/avatar.png"; // Default avatar for guests
+        return undefined;
     }
     return `/images/avatars/${username}.png`; // Custom avatar based on username
 };
