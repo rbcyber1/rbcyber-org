@@ -1,0 +1,99 @@
+.title-header {
+    grid-column: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    width: min(100%, max-content);
+    min-width: 0;
+    height: 52px;
+    max-width: 100%;
+    padding: 0.35rem 0.25rem;
+    overflow: hidden;
+    position: relative;
+    color: var(--color-paper);
+    justify-self: center;
+}
+
+.title-header::after {
+    position: absolute;
+    right: 0.25rem;
+    bottom: 0;
+    left: 0.25rem;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--color-deep) 12%,
+        var(--color-signal) 42%,
+        var(--color-glow) 58%,
+        var(--color-signal) 78%,
+        var(--color-deep) 92%,
+        transparent 100%
+    );
+    content: "";
+    opacity: 0.85;
+    box-shadow: 0 0 10px rgba(47, 123, 255, 0.28);
+}
+
+.title-header-logo {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    transition:
+        filter 220ms ease,
+        transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.title-header-logo:hover {
+    filter: grayscale(1) brightness(0) saturate(100%) invert(72%) sepia(38%)
+        saturate(1041%) hue-rotate(183deg) brightness(103%) contrast(101%)
+        drop-shadow(0 0 4px rgba(127, 178, 255, 0.42));
+    transform: translateY(-1px) rotate(-2deg) scale(1.04);
+}
+
+.title-header-text {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: var(--font-title);
+    font-size: clamp(0.8rem, 1.8vw, 1.15rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.title-header-text > .recolor {
+    color: var(--color-signal);
+}
+
+@media (max-width: 600px) {
+    .title-header {
+        gap: 0.5rem;
+        height: 44px;
+        padding: 0.25rem 0.15rem;
+    }
+
+    .title-header::after {
+        right: 0.15rem;
+        left: 0.15rem;
+    }
+
+    .title-header-logo {
+        flex-basis: 28px;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .title-header-logo {
+        transition: filter 220ms ease;
+    }
+
+    .title-header-logo:hover {
+        transform: none;
+    }
+}

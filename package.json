@@ -24,5 +24,8 @@
     "bugs": {
         "url": "https://github.com/rbcyber1/rbcyber-org/issues"
     },
-    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme"
+    "homepage": "https://github.com/rbcyber1/rbcyber-org#readme",
+    "dependencies": {
+        "@designcodeio/threeui": "^1.0.0"
+    }
 }

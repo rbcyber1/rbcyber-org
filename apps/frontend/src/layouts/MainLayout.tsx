@@ -1,16 +1,36 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
-import "../components/UserHeader";
-import "../components/LevelChange";
-import "../components/Header";
-import "../components/FooterNavbar";
+import MainBackground from "../backgrounds/MainBackground";
+
+import UserHeader from "../components/UserHeader";
+import LevelChange from "../components/LevelChange";
+import Header from "../components/Header";
+import FooterNavbar from "../components/FooterNavbar";
+import Socials from "../components/Socials";
+
+import { getMainRoutes } from "../scripts/routes";
+
+import "../styles/layouts/MainLayout.css";
 
 const MainLayout = () => {
+    const location = useLocation();
+
     return (
         <div className="main-layout">
-            <main className="main-content">
+            <MainBackground />
+            <header className="header-row">
+                <LevelChange direction="up" level="Dashboard" />
+                <Header />
+                <UserHeader />
+            </header>
+            <main className="main-content" key={location.pathname}>
                 <Outlet />
             </main>
+            <footer className="footer-row">
+                <LevelChange direction="down" level="Learn" />
+                <FooterNavbar items={getMainRoutes()} />
+                <Socials />
+            </footer>
         </div>
     );
 };

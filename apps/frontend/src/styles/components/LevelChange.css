@@ -1,0 +1,46 @@
+.level-change {
+    grid-column: 1;
+    display: flex;
+    align-items: center;
+    justify-self: left;
+    margin-left: 15px;
+}
+
+.level-change-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.65rem;
+    border: 1px solid rgba(47, 123, 255, 0.38);
+    border-radius: 2px;
+    background: rgba(5, 8, 16, 0.28);
+    color: var(--color-mist);
+    cursor: pointer;
+    transition:
+        color 180ms ease,
+        border-color 180ms ease,
+        background-color 180ms ease;
+}
+
+.level-change-button:hover,
+.level-change-button:focus-visible {
+    border-color: var(--color-signal);
+    background: rgba(47, 123, 255, 0.08);
+    color: var(--color-glow);
+}
+
+.level-change-button:focus-visible {
+    outline: none;
+}
+
+.level-change-icon {
+    display: inline-flex;
+    color: var(--color-signal);
+}
+
+.level-change-text {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+}
