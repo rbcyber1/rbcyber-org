@@ -16,7 +16,7 @@ const MainLayout = () => {
         <div className="main-layout">
             <MainBackground />
             <header className="header-row">
-                <LevelChange level="Dashboard" />
+                <LevelChange direction="up" level="Dashboard" />
                 <Header />
                 <UserHeader />
             </header>
@@ -24,7 +24,7 @@ const MainLayout = () => {
                 <Outlet />
             </main>
             <footer className="footer-row">
-                <LevelChange level="Learn" />
+                <LevelChange direction="down" level="Learn" />
                 <FooterNavbar items={getMainRoutes()} />
             </footer>
         </div>
