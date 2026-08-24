@@ -11,7 +11,7 @@ const Socials = () => {
                 <img src="/imgs/github.svg" alt="GitHub" />
             </a>
             <a
-                href="https://www.instagram.com/rbcyber/"
+                href="https://www.instagram.com/rbhscyber/"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
             >
