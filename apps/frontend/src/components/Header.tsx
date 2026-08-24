@@ -9,7 +9,8 @@ const Header = () => {
                 alt="Club Logo"
             />
             <h1 className="title-header-text">
-                Rancho Bernardo Cybersecurity Club
+                <span className="recolor">Rancho Bernardo</span> Cybersecurity
+                Club
             </h1>
         </div>
     );
