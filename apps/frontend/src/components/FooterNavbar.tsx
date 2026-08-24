@@ -11,7 +11,7 @@ const FooterNavbar = ({ items }: { items: NavItem[] }) => {
                 <NavLink
                     key={item.href}
                     to={item.href}
-                    end={item.href === "/"}
+                    end
                 >
                     {item.icon && (
                         <span className="footer-navbar-icon">{item.icon}</span>

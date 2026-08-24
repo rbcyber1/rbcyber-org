@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 import MainBackground from "../backgrounds/MainBackground";
 
@@ -13,6 +13,8 @@ import { getMainRoutes } from "../scripts/routes";
 import "../styles/layouts/MainLayout.css";
 
 const MainLayout = () => {
+    const location = useLocation();
+
     return (
         <div className="main-layout">
             <MainBackground />
@@ -21,7 +23,7 @@ const MainLayout = () => {
                 <Header />
                 <UserHeader />
             </header>
-            <main className="main-content">
+            <main className="main-content" key={location.pathname}>
                 <Outlet />
             </main>
             <footer className="footer-row">

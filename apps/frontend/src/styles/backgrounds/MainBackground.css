@@ -7,3 +7,22 @@
     background: var(--color-void, #050810);
     pointer-events: none;
 }
+
+.main-background-slide {
+    position: absolute;
+    inset: -8%;
+    width: 116%;
+    height: 116%;
+    transform: translate3d(
+        calc(var(--background-slide, 0) * -2.5%),
+        calc(var(--background-slide, 0) * 1%),
+        0
+    );
+    transition: transform 900ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .main-background-slide {
+        transition: none;
+    }
+}

@@ -17,17 +17,26 @@ export const routeConfig: RouteObject[] = [
             {
                 index: true,
                 element: <Home />,
-                handle: { nav: { label: "Home", href: "/" } },
+                handle: {
+                    nav: { label: "Home", href: "/" },
+                    backgroundSlide: 0,
+                },
             },
             {
                 path: "/about",
                 element: <About />,
-                handle: { nav: { label: "About", href: "/about" } },
+                handle: {
+                    nav: { label: "About", href: "/about" },
+                    backgroundSlide: 1,
+                },
             },
             {
                 path: "/join",
                 element: <Join />,
-                handle: { nav: { label: "Join", href: "/join" } },
+                handle: {
+                    nav: { label: "Join", href: "/join" },
+                    backgroundSlide: 2,
+                },
             },
             { path: "*", element: <NotFound /> },
         ],
