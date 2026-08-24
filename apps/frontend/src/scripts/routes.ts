@@ -1,22 +1,16 @@
-import type { NavItem } from "./../types/nav";
-
-const publicRoutes = import.meta.glob("../routes/public/*.tsx", {
-    eager: true,
-});
+import type { NavItem } from "../types/nav";
+import { routeConfig } from "../router";
 
 export const changeLevel = () => {
     alert("Currently under maintenance. Please check back later.");
 };
 
 export const getMainRoutes = (): NavItem[] => {
-    const routes = Object.keys(publicRoutes).map((routeFile) => {
-        const routeName = routeFile.split("/").pop()?.replace(".tsx", "") ?? "";
+    const children = routeConfig[0]?.children ?? [];
 
-        return {
-            label: routeName,
-            href: routeName === "Home" ? "/" : `/${routeName.toLowerCase()}`,
-        };
+    return children.flatMap((route) => {
+        const navigation = route.handle?.nav;
+
+        return navigation ? [navigation as NavItem] : [];
     });
-
-    return routes;
 };

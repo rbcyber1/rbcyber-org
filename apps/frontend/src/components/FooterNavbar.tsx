@@ -1,29 +1,25 @@
 import type { NavItem } from "../types/nav";
 
-import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import "../styles/components/FooterNavbar.css";
 
 const FooterNavbar = ({ items }: { items: NavItem[] }) => {
-    const location = useLocation();
-
     return (
-        <div className="footer-navbar">
+        <nav className="footer-navbar" aria-label="Main navigation">
             {items.map((item) => (
-                <a
+                <NavLink
                     key={item.href}
-                    href={item.href}
-                    className={
-                        location.pathname === item.href ? "nav-active" : ""
-                    }
+                    to={item.href}
+                    end={item.href === "/"}
                 >
                     {item.icon && (
                         <span className="footer-navbar-icon">{item.icon}</span>
                     )}
                     <span className="footer-navbar-label">{item.label}</span>
-                </a>
+                </NavLink>
             ))}
-        </div>
+        </nav>
     );
 };
 
