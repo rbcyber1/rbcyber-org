@@ -9,8 +9,8 @@ const Header = () => {
                 alt="Club Logo"
             />
             <h1 className="title-header-text">
-                <span className="recolor">Rancho Bernardo</span> Cybersecurity
-                Club
+                Rancho Bernardo{" "}
+                <span className="recolor">Cybersecurity Club</span>
             </h1>
         </div>
     );
