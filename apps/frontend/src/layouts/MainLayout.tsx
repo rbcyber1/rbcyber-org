@@ -6,6 +6,7 @@ import UserHeader from "../components/UserHeader";
 import LevelChange from "../components/LevelChange";
 import Header from "../components/Header";
 import FooterNavbar from "../components/FooterNavbar";
+import Socials from "../components/Socials";
 
 import { getMainRoutes } from "../scripts/routes";
 
@@ -26,6 +27,7 @@ const MainLayout = () => {
             <footer className="footer-row">
                 <LevelChange direction="down" level="Learn" />
                 <FooterNavbar items={getMainRoutes()} />
+                <Socials />
             </footer>
         </div>
     );

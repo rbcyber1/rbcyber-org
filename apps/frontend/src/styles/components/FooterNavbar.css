@@ -1,4 +1,5 @@
 .footer-navbar {
+    grid-column: 2;
     display: inline-flex;
     align-items: center;
     justify-self: center;
@@ -49,7 +50,6 @@
 .footer-navbar a[aria-current="page"]::before {
     border-color: var(--color-signal);
     background: var(--color-signal);
-    box-shadow: 0 0 8px rgba(47, 123, 255, 0.55);
 }
 
 .footer-navbar a[aria-current="page"]::after {
