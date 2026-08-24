@@ -23,9 +23,12 @@
     "homepage": "https://github.com/rbcyber1/rbcyber-org#readme",
     "type": "module",
     "dependencies": {
+        "@react-three/fiber": "^9.7.0",
+        "@types/three": "^0.185.4",
         "react": "^19.2.8",
         "react-dom": "^19.2.8",
-        "react-router-dom": "^7.18.2"
+        "react-router-dom": "^7.18.2",
+        "three": "^0.185.1"
     },
     "devDependencies": {
         "@types/node": "^24.13.3",
