@@ -7,6 +7,7 @@ import Home from "./routes/public/Home";
 import About from "./routes/public/About";
 import Join from "./routes/public/Join";
 
+import RedirectRouter from "./routes/shared/RedirectRoute";
 import NotFound from "./routes/shared/NotFound";
 
 export const routeConfig: RouteObject[] = [
@@ -40,6 +41,10 @@ export const routeConfig: RouteObject[] = [
             },
             { path: "*", element: <NotFound /> },
         ],
+    },
+    {
+        path: "/r/*",
+        element: <RedirectRouter />,
     },
 ];
 
