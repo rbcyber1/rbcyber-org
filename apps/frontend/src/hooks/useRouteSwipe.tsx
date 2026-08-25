@@ -14,7 +14,12 @@ const useRouteSwipe = () => {
                 (route) => route.href === location.pathname,
             );
 
-            if (event.key === "ArrowLeft" && currentIndex > 0) {
+            if (
+                location.pathname === "/404" &&
+                (event.key === "ArrowLeft" || event.key === "ArrowRight")
+            ) {
+                navigate("/");
+            } else if (event.key === "ArrowLeft" && currentIndex > 0) {
                 navigate(mainRoutes[currentIndex - 1].href);
             } else if (
                 event.key === "ArrowRight" &&
