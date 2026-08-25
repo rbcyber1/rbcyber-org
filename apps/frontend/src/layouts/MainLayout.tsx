@@ -1,5 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 
+import useRouteSwipe from "../hooks/useRouteSwipe";
+
 import MainBackground from "../backgrounds/MainBackground";
 
 import UserHeader from "../components/UserHeader";
@@ -14,6 +16,8 @@ import "../styles/layouts/MainLayout.css";
 
 const MainLayout = () => {
     const location = useLocation();
+
+    useRouteSwipe();
 
     return (
         <div className="main-layout">
