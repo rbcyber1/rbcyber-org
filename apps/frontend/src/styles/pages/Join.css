@@ -1,0 +1,22 @@
+.join-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: start;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+}
+
+.google-form {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.google-form iframe {
+    display: block;
+    border: 0;
+    height: 100%;
+    width: 100%;
+}
