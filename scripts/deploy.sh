@@ -4,6 +4,7 @@
 RBCYBER_WEBSITE_DIR="/srv/rbcyber-web/rbcyber-org"
 
 cd $RBCYBER_WEBSITE_DIR
+git reset --hard
 git pull
 npm install
 npm run build
