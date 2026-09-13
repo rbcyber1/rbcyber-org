@@ -1,6 +1,6 @@
 import "../styles/components/ImageCarrousel.css";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const images = Object.values(
     import.meta.glob("../../public/imgs/carrousel/*", {
@@ -21,6 +21,14 @@ const ImageCarrousel = () => {
             return (currentIndex + offset + images.length) % images.length;
         });
     };
+
+    useEffect(() => {
+        const timer = window.setInterval(() => {
+            switchImage("right");
+        }, 5000);
+
+        return () => window.clearInterval(timer);
+    }, []);
 
     return (
         <div className="image-carrousel" aria-label="Club highlights">
