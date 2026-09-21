@@ -65,7 +65,12 @@ const AboutTab = ({
 const About = () => {
     const [activeTab, setActiveTab] = useState(0);
 
-    const tabs = [
+    const tabs: Array<{
+        title: string;
+        subtitle: string;
+        content: ReactNode;
+        imgSrc?: string;
+    }> = [
         {
             title: "What We Do",
             subtitle: "What happens at club meetings? What are we doing?",
@@ -183,7 +188,7 @@ const About = () => {
                     tabTitle={tabs[activeTab].title}
                     tabSubtitle={tabs[activeTab].subtitle}
                     tabContent={tabs[activeTab].content}
-                    tabImgSrc={tabs[activeTab].imgSrc}
+                    imgSrc={tabs[activeTab].imgSrc}
                 />
             </div>
         </div>
