@@ -184,6 +184,7 @@ const About = () => {
                     ))}
                 </div>
                 <AboutTab
+                    key={activeTab}
                     index={activeTab}
                     tabTitle={tabs[activeTab].title}
                     tabSubtitle={tabs[activeTab].subtitle}
