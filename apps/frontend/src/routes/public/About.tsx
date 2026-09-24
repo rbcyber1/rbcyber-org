@@ -115,7 +115,7 @@ const About = () => {
                     </p>
                 </>
             ),
-            imgSrc: "/public/imgs/about/vscode.jpg",
+            imgSrc: "/imgs/about/vscode.jpg",
         },
         {
             title: "Why We Do It",
@@ -158,7 +158,7 @@ const About = () => {
                     </p>
                 </>
             ),
-            imgSrc: "/public/imgs/about/cert.jpg",
+            imgSrc: "/imgs/about/cert.jpg",
         },
         {
             title: "Who Does It?",
