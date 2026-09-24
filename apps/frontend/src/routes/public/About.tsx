@@ -1,6 +1,15 @@
 import { useState, type ReactNode } from "react";
+import ImageCarrousel from "../../components/ImageCarrousel";
 
 import "../../styles/pages/About.css";
+
+const aboutCarouselImages = Object.values(
+    import.meta.glob("/public/imgs/officers/*", {
+        eager: true,
+        import: "default",
+        query: "?url",
+    }),
+) as string[];
 
 const AboutTabHeader = ({
     tabTitle,
@@ -106,6 +115,7 @@ const About = () => {
                     </p>
                 </>
             ),
+            imgSrc: "/public/imgs/about/vscode.jpg",
         },
         {
             title: "Why We Do It",
@@ -130,14 +140,15 @@ const About = () => {
                     </p>
                     <hr></hr>
                     <p>
-                        Additionally, we can boast our club is one of the few to
-                        offer the opportunity of professional certification via
-                        CompTIA, where students can be professionally recognized
-                        for dedication to the club. Job seekers are over three
-                        times as likely to be considered with a professional
-                        certification on their resume. Each meetings builds off
-                        the last, and we offer tutoring and study resources for
-                        students determined to become certified.{" "}
+                        Additionally, we can boast our club is one of the few
+                        on-campus clubs to offer the opportunity of professional
+                        certification via CompTIA, where students can be
+                        professionally recognized for dedication to the club.
+                        Job seekers are over three times as likely to be
+                        considered with a professional certification on their
+                        resume. Each meetings builds off the last, and we offer
+                        tutoring and study resources for students determined to
+                        become certified.{" "}
                         <strong>
                             Rancho Bernardo Cybersecurity Club will front exam
                             costs, provided the funding exists, for students who
@@ -147,11 +158,17 @@ const About = () => {
                     </p>
                 </>
             ),
+            imgSrc: "/public/imgs/about/cert.jpg",
         },
         {
             title: "Who Does It?",
             subtitle: "Who's our target audience? Who are the officers?",
-            content: <p>Coming soon!</p>,
+            content: (
+                <>
+                    <p>Coming soon!</p>
+                    <ImageCarrousel images={aboutCarouselImages} />
+                </>
+            ),
         },
     ];
 

@@ -2,15 +2,7 @@ import "../styles/components/ImageCarrousel.css";
 
 import { useEffect, useState } from "react";
 
-const images = Object.values(
-    import.meta.glob("../../public/imgs/carrousel/*", {
-        eager: true,
-        import: "default",
-        query: "?url",
-    }),
-);
-
-const ImageCarrousel = () => {
+const ImageCarrousel = ({ images }: { images: string[] }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState<"left" | "right">("right");
 
