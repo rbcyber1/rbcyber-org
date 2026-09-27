@@ -43,17 +43,23 @@ const AboutTab = ({
     tabSubtitle,
     tabContent,
     imgSrc,
+    carousel,
     index,
 }: {
     tabTitle: string;
     tabSubtitle: string;
     tabContent: ReactNode;
     imgSrc?: string;
+    carousel?: ReactNode;
     index: number;
 }) => {
     return (
         <section
-            className={`about-tab ${imgSrc ? "has-image" : "text-only"}`}
+            className={`about-tab ${
+                imgSrc ? "has-image"
+                : carousel ? "has-carousel"
+                : "text-only"
+            }`}
             id={`about-panel-${index}`}
             role="tabpanel"
             aria-labelledby={`about-tab-${index}`}
@@ -67,6 +73,7 @@ const AboutTab = ({
             </div>
             <div className="about-tab-content">{tabContent}</div>
             {imgSrc && <img src={imgSrc} alt={tabTitle} />}
+            {carousel}
         </section>
     );
 };
@@ -175,16 +182,16 @@ const About = () => {
                         science and leadership.
                     </p>
                     <h2 className="about-page-officers">Club Officers</h2>
-                    <p>
+                    <p className="about-officer-list">
                         <strong>President -</strong> Bobby Elmore
                         <br />
                         <strong>Vice President -</strong> Zakariyyah Salat
                         <br />
                         <strong>Technician -</strong> Ryan Tran
                     </p>
-                    <ImageCarrousel images={aboutCarouselImages} />
                 </>
             ),
+            carousel: <ImageCarrousel images={aboutCarouselImages} />,
         },
     ];
 
@@ -223,6 +230,7 @@ const About = () => {
                     tabSubtitle={tabs[activeTab].subtitle}
                     tabContent={tabs[activeTab].content}
                     imgSrc={tabs[activeTab].imgSrc}
+                    carousel={tabs[activeTab].carousel}
                 />
             </div>
         </div>
