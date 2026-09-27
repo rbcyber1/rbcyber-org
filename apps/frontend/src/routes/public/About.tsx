@@ -165,7 +165,23 @@ const About = () => {
             subtitle: "Who's our target audience? Who are the officers?",
             content: (
                 <>
-                    <p>Coming soon!</p>
+                    <p>
+                        If you're interested in Cybersecurity, Computer Science,
+                        STEM, or want to explore another career opportunity, you
+                        can find lots of like minded students at Rancho Bernardo
+                        Cybersecurity Club. Our club is open to all students,
+                        regardless of experience level. All of our officers are
+                        both students and mentors, experienced in computer
+                        science and leadership.
+                    </p>
+                    <h2 className="about-page-officers">Club Officers</h2>
+                    <p>
+                        <strong>President -</strong> Bobby Elmore
+                        <br />
+                        <strong>Vice President -</strong> Zakariyyah Salat
+                        <br />
+                        <strong>Technician -</strong> Ryan Tran
+                    </p>
                     <ImageCarrousel images={aboutCarouselImages} />
                 </>
             ),
