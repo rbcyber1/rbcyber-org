@@ -280,7 +280,7 @@
     box-shadow: 0 0 10px rgba(47, 123, 255, 0.45);
 }
 
-.about-tab.has-carousel .about-tab-content,
+.about-tab.has-carrousel .about-tab-content,
 .about-tab.has-image .about-tab-content {
     grid-column: 1;
 }

@@ -2,7 +2,7 @@ import "../../styles/pages/Home.css";
 
 import ImageCarrousel from "../../components/ImageCarrousel";
 
-const homeCarouselImages = Object.values(
+const homeCarrouselImages = Object.values(
     import.meta.glob("/public/imgs/carrousel/*", {
         eager: true,
         import: "default",
@@ -31,7 +31,7 @@ const Home = () => {
                 </div>
             </section>
             <div className="home-page-content">
-                <ImageCarrousel images={homeCarouselImages} />
+                <ImageCarrousel images={homeCarrouselImages} />
             </div>
         </div>
     );

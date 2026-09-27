@@ -3,7 +3,7 @@ import ImageCarrousel from "../../components/ImageCarrousel";
 
 import "../../styles/pages/About.css";
 
-const aboutCarouselImages = Object.values(
+const aboutCarrouselImages = Object.values(
     import.meta.glob("/public/imgs/officers/*", {
         eager: true,
         import: "default",
@@ -43,21 +43,21 @@ const AboutTab = ({
     tabSubtitle,
     tabContent,
     imgSrc,
-    carousel,
+    carrousel,
     index,
 }: {
     tabTitle: string;
     tabSubtitle: string;
     tabContent: ReactNode;
     imgSrc?: string;
-    carousel?: ReactNode;
+    carrousel?: ReactNode;
     index: number;
 }) => {
     return (
         <section
             className={`about-tab ${
                 imgSrc ? "has-image"
-                : carousel ? "has-carousel"
+                : carrousel ? "has-carrousel"
                 : "text-only"
             }`}
             id={`about-panel-${index}`}
@@ -73,7 +73,7 @@ const AboutTab = ({
             </div>
             <div className="about-tab-content">{tabContent}</div>
             {imgSrc && <img src={imgSrc} alt={tabTitle} />}
-            {carousel}
+            {carrousel}
         </section>
     );
 };
@@ -86,6 +86,7 @@ const About = () => {
         subtitle: string;
         content: ReactNode;
         imgSrc?: string;
+        carrousel?: ReactNode;
     }> = [
         {
             title: "What We Do",
@@ -191,7 +192,7 @@ const About = () => {
                     </p>
                 </>
             ),
-            carousel: <ImageCarrousel images={aboutCarouselImages} />,
+            carrousel: <ImageCarrousel images={aboutCarrouselImages} />,
         },
     ];
 
@@ -230,7 +231,7 @@ const About = () => {
                     tabSubtitle={tabs[activeTab].subtitle}
                     tabContent={tabs[activeTab].content}
                     imgSrc={tabs[activeTab].imgSrc}
-                    carousel={tabs[activeTab].carousel}
+                    carrousel={tabs[activeTab].carrousel}
                 />
             </div>
         </div>
