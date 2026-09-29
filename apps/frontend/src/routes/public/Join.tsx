@@ -4,10 +4,12 @@ const Join = () => {
     return (
         <div className="join-page">
             <div className="page-title">
-                <h1>Join rbcyber.org</h1>
+                <h1>
+                    Join RB <span className="recolor">Cybersecurity</span>
+                </h1>
             </div>
             <div className="google-form">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSddzfXZZ828X54rj8wPEWjWaBsWqZWIctlcTuLL1kzh7f4Ciw/viewform?embedded=true">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSe-NOhQCaq7GnnskIcEVXTGlAek4_1mCfRR18MyEWtfLxGGxA/viewform?embedded=true">
                     Loading…
                 </iframe>
             </div>
